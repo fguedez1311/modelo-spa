@@ -1,0 +1,63 @@
+html{
+    box-sizing:     border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+*,  *:before, *:after {
+    box-sizing: inherit;
+}   
+
+body{
+    margin: 0;
+    overflow: hidden    ;
+}
+a{
+    color: #01579c;
+    transition: color   0.3s ease-in-out;
+}
+a:hover{
+    color: #0288d1;
+}
+h1{
+    text-align: center;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.error{
+    padding: 1rem;
+    font-size: 150%;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color: #d32f2f;
+}
+.search-form{
+    margin: auto;
+    text-align: center;
+}
+.search-form input{
+    display: block;
+    margin: auto;
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+.header{
+    padding: 0.5rem;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    background-color: #fff;
+}
+.header >*{
+    margin: 1rem auto;
+}
+.loader{
+    margin:1rem auto ;
+    display: block;
+    width: 50px;        
+    height: 50px;
+
+}
