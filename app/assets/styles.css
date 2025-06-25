@@ -9,7 +9,7 @@ html{
 
 body{
     margin: 0;
-    overflow: hidden    ;
+    overflow-x: hidden    ;
 }
 a{
     color: #01579c;
@@ -44,6 +44,12 @@ img{
     border-radius: 0.25rem;
     font-size: 1rem;
 }
+.grid-fluid{
+    margin: 1rem auto;
+    max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
 .header{
     padding: 0.5rem;
     position: sticky;
@@ -60,4 +66,16 @@ img{
     width: 50px;        
     height: 50px;
 
+}
+.post-card{
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 80%;
+    border-radius: 0.25rem;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.post-card p{
+   display: flex;
+   justify-content: space-between;
 }
