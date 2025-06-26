@@ -34,6 +34,20 @@ export async function Router() {
     }
     else{
        $main.innerHTML="<h2>Aquí cargará el  contenido del post seleccionado</h2>"
+      //  await ajax({
+               
+      //           url:api.POSTS,
+      //           cbSuccess:(posts)=>{
+      //               //console.log($main)
+      //               let html=""
+      //               posts.forEach(post =>html+= PostCard(post))
+      //               $main.innerHTML=html;
+                   
+                    
+                      
+      //           }
+
+      //     })
     }
     
     d.querySelector(".loader").style.display="none";
