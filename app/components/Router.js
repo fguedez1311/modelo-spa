@@ -27,7 +27,20 @@ export async function Router() {
           })
     }
     else if(hash.includes("#/search")){
-       $main.innerHTML="<h2>Sección de Búsqueda</h2>"
+       let query=localStorage.getItem("wpSearch")   
+       if(!query) return false
+       await ajax({
+               
+                url:`${api.SEARCH}${query}`,
+                cbSuccess:(posts)=>{
+                   console.log(posts)
+                    
+                    
+                      
+                }
+
+          })
+            
 
     }
     else if(hash.includes("#/contacto")){
