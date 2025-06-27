@@ -2,6 +2,7 @@ import api from "../helpers/wp_api.js";
 import { ajax } from "../helpers/ajax.js";
 import { PostCard } from "./PostCard.js";
 import { Post } from "./Post.js";
+import { SearchCard } from "./SearchCard.js";
 
 export async function Router() {
     const d = document,
@@ -28,12 +29,29 @@ export async function Router() {
     }
     else if(hash.includes("#/search")){
        let query=localStorage.getItem("wpSearch")   
-       if(!query) return false
+       if(!query) {
+         d.querySelector(".loader").style.display="none";
+         return false
+      }
        await ajax({
                
                 url:`${api.SEARCH}${query}`,
-                cbSuccess:(posts)=>{
-                   console.log(posts)
+                cbSuccess:(search)=>{
+                   console.log(search)
+                   let html=""
+                  
+                   if (search.length === 0) {
+                        $main.innerHTML = `
+                            <p class="error">
+                                No se encontraron resultados para <mark>${query}</mark>   
+                            </p>
+                        `;
+                        return false;
+                   }
+                   else{
+                        search.forEach(post => html += SearchCard(post));
+                        $main.innerHTML = html;
+                   }
                     
                     
                       
